@@ -12,8 +12,8 @@ jobs:
       - checkout
       - run: bundle install
       - run: |
-          brew update && sudo brew install firefox-esr
-          sudo brew install vnc4server metacity
+          brew update && brew install firefox-esr
+          brew install x11vnc metacity
 
           vnc4server -geometry 1280x1024 -depth 24
           export DISPLAY=:1.0
