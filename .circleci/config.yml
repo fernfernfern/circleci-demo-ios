@@ -34,6 +34,17 @@ jobs:
     steps:
       - checkout
       - run: bundle install
+      - run: |
+          apt-get update && sudo apt-get install firefox-esr
+          sudo apt install vnc4server metacity
+
+          vnc4server -geometry 1280x1024 -depth 24
+          export DISPLAY=:1.0
+          metacity &
+
+          # if Firefox isn't installed:
+          # sudo apt-get update && sudo apt-get install firefox-esr
+          firefox &
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
