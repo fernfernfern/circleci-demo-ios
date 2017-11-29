@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run: bundle install
       - run: |
-          apt-get update && sudo apt-get install firefox-esr
+          brew update && sudo brew install firefox-esr
           sudo apt install vnc4server metacity
 
           vnc4server -geometry 1280x1024 -depth 24
