@@ -12,12 +12,7 @@ jobs:
       - checkout
       - run: bundle install
       - run: |
-          brew install x11vnc metacity
+          brew install x11vnc
 
           x11vnc -geometry 1280x1024 -depth 24
           export DISPLAY=:1.0
-          metacity &
-
-          # if Firefox isn't installed:
-          # sudo apt-get update && sudo apt-get install firefox-esr
-          firefox &
